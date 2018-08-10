@@ -1,0 +1,51 @@
+function validityChecker(inputArray){
+    "use strict";
+    let x1 = Number(inputArray[0]);
+    let y1 = Number(inputArray[1]);
+    let x2 = Number(inputArray[2]);
+    let y2 = Number(inputArray[3]);
+
+    let x0 = 0;
+    let y0 = 0;
+
+    let xOutput = `{${x1}, ${y1}} to {${x0}, ${y0}} is `;
+    let yOutput = `{${x2}, ${y2}} to {${x0}, ${y0}} is `;
+    let xyOutput = `{${x1}, ${y1}} to {${x2}, ${y2}} is `;
+
+    let valid = "valid";
+    let invalid = "invalid";
+
+    let distanceX = Math.sqrt(
+        ((x1 - x0) ** 2) + ((y1 - y0) ** 2)
+    );
+    let distanceY = Math.sqrt(
+        ((x2 - x0) ** 2) + ((y2 - y0) ** 2)
+    );
+    let distanceXY = Math.sqrt(
+        ((x2 - x1) ** 2) + ((y2 - y1) ** 2)
+    );
+
+    //X check
+    if (Number.isInteger(distanceX)){
+        console.log(xOutput + valid);
+    }
+    else{
+        console.log(xOutput + invalid);
+    }
+    //Y check
+    if (Number.isInteger(distanceY)){
+        console.log(yOutput + valid);
+    }
+    else{
+        console.log(yOutput + invalid);
+    }
+    //XY check
+    if (Number.isInteger(distanceXY)){
+        console.log(xyOutput + valid);
+    }
+    else{
+        console.log(xyOutput + invalid);
+    }
+}
+
+validityChecker([2, 1, 1, 1]);

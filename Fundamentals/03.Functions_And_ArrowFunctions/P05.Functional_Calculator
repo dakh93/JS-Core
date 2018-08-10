@@ -1,0 +1,21 @@
+function calculator(n1, n2, o){
+    "use strict";
+
+    let a = Number(n1);
+    let b = Number(n2);
+    let op = o;
+
+    let calculation = function(a, b, op){
+        switch (op){
+            case "+": return a + b;
+            case "-": return a - b;
+            case "*": return a * b;
+            case "/": return a / b;
+        }
+    };
+
+    let result = calculation(a, b, op);
+    console.log(result);
+}
+
+calculator(2, 4, '-');
